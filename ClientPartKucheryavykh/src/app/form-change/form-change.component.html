@@ -1,0 +1,42 @@
+<h3>Change Form</h3>
+<hr>
+<div class="col-xs-8 col-xs-offset-2">
+    <form [formGroup]="changeForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="pass">
+            <p *ngIf="changeForm.get('pass').invalid && changeForm.get('pass').touched">
+                <span *ngIf="changeForm.get('pass').errors['required']"> Password can't be null</span>
+                <span *ngIf="changeForm.get('pass').errors['minLength']"> Password cannot be less than 3
+                    characters</span>
+            </p>
+        </div>
+        <div class="form-group">
+            <label>Password repeat</label>
+            <input type="password" class="form-control" formControlName="passRepeat">
+            <p *ngIf="changeForm.get('passRepeat').invalid && changeForm.get('passRepeat').touched">
+                <span *ngIf="changeForm.get('passRepeat').errors['required']"> Password can't be null</span>
+                <span *ngIf="changeForm.get('passRepeat').errors['minLength']"> Password cannot be less than 3
+                    characters</span>
+            </p>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" formControlName="email">
+            <p *ngIf="changeForm.get('email').invalid && changeForm.get('email').touched">
+                <span *ngIf="changeForm.get('email').errors['required']"> Email can't be null</span>
+                <span *ngIf="changeForm.get('email').errors['email']"> Email must have "@"
+                    characters</span>
+            </p>
+        </div>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" formControlName="name">
+            <p *ngIf="changeForm.get('pass').invalid && changeForm.get('pass').touched">
+                <span *ngIf="changeForm.get('pass').errors['required']"> Name can't be null</span>
+            </p>
+        </div>
+        <button class="btn btn-success" type="submit" [disabled]="changeForm.invalid">Save</button>
+    </form>
+    <app-button-back></app-button-back>
+</div>

@@ -1,0 +1,16 @@
+<div class="col-xs-8 col-xs-offset-2">
+    <label>Filter ID</label>
+    <input type="text" class="form-control" [(ngModel)]="searchUser">
+    <hr>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let user of userList | userFilter:searchUser:searchField">
+            <span class="badge">
+                <h5> ID: {{user.id}}, Email: {{user.email}}, Password: {{user.password}}, Name: {{user.name}}</h5>
+            </span>
+            <br>
+            <button class="btn btn-xs btn-info" (click)="changeData(user)" [disabled]="user.password=='******'">Change
+                Profile</button>
+        </li>
+    </ul>
+    <app-button-back></app-button-back>
+</div>

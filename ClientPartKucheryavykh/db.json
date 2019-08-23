@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "name": "ivan",
+      "email": "vanya@mail.ru",
+      "password": "123",
+      "id": "ivan"
+    },
+    {
+      "name": "egor",
+      "email": "egor@mail.ru",
+      "password": "234",
+      "id": "egor"
+    },
+    {
+      "name": "max",
+      "email": "max@mail.ru",
+      "password": "345",
+      "id": "max"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+<div class="col-xs-8 col-xs-offset-2">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div formGroupName="user">
+      <div class="form-group" [ngClass]="{'has-error': form.get('user.id').invalid && form.get('user.id').touched}">
+        <label>Login</label>
+        <input type="text" class="form-control" formControlName="id" placeholder="Enter your login">
+        <p *ngIf="form.get('user.id').invalid && form.get('user.id').touched">
+          <span *ngIf="form.get('user.id').errors['required']"> Login can't be null</span>
+        </p>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': form.get('user.pass').invalid && form.get('user.pass').touched}">
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName="pass" placeholder="Enter your password">
+        <p *ngIf="form.get('user.pass').invalid && form.get('user.pass').touched">
+          <span *ngIf="form.get('user.pass').errors['required']"> Password can't be null</span>
+        </p>
+      </div>
+    </div>
+    <button class="btn btn-success" type="submit" [disabled]="form.invalid">Enter</button>
+  </form>
+  <hr>
+  <button class="btn btn-success" type="submit" (click)="openRegistrationForm()">Registration</button>
+</div>
